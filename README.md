@@ -1,28 +1,89 @@
-# 5xTraining
+# It's About Time!
 
-## 關於本教程
+Life is short, we'd like to enjoy every moment of every day.
 
-這份文件是五倍紅寶石的內部教育訓練教材，用以建立新進社員對於 Ruby on Rails 以及各種週邊技術的基礎知識。原始版本為[日本株式会社万葉](https://github.com/everyleaf/el-training)編撰。
+## Table of content
 
-所有新進工程師或技術實習生，不論其原本技術能力如何，皆需要完成本份教程中的必修課題。
+[Requirements](#Requirements)  
+[Usage](#Usage)
 
-我們對於研習期間沒有特別的規定，只要完成所有的步驟就算是研習結束。
+- [It's About Time!](#Its-About-Time)
+  - [Table of content](#Table-of-content)
+  - [Requirements](#Requirements)
+  - [Usage](#Usage)
+    - [Install Dependency](#Install-Dependency)
+    - [Prepare Database](#Prepare-Database)
+    - [Start server](#Start-server)
+    - [Check routes:](#Check-routes)
+  - [Models](#Models)
+    - [Entity-relationship model](#Entity-relationship-model)
+    - [Table schema](#Table-schema)
 
-在本教程中，預設會有下列兩種角色：
+## Requirements
 
-- 新人（mentee）：本教程的使用者。
-- 導師（mentor）：對新人進行教育、指導、建議。也負責帶領新人討論並決定需求與規格等。
+- Ruby version 2.6.0
+- Rails version 5.2.3
+- PostgreSQL 11.3
 
-導師要指導新人到什麼程度，完全交由導師自己決定。研習期間的設定，也是由導師依據新人能力和公司專案狀態，做初步的評估。
+## Usage
 
-## 目錄
+### Install Dependency
 
-- [後端 & DevOps](backend.md)
-- [前端](frontend.md)
-- [設計](design.md)
+```s
+$ bundle install
+```
 
-## License
+### Prepare Database
 
-本教程以 [Creative Commons 姓名標示-非商業性-相同方式分享 4.0 國際](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW) 授權。
+If you didn't have database.
 
-[![Creative Common License](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW)  
+```s
+$ rails db:create
+```
+
+And run migration to create tables.
+
+```s
+$ rails db:migrate
+```
+
+### Start server
+
+Start Rails server.
+
+```s
+$ rails s
+```
+
+### Check routes:
+
+Check rails routes for more detail:
+
+```
+$ rails routes
+```
+
+## Models
+
+### Entity-relationship model
+
+![Enitiy-relationship model in this project](https://github.com/stevencch99/About_Time/blob/develop/doc/Entity_relationship_model.jpg)
+
+### Table schema
+
+| Table name | Column      | Data type |
+| :--------- | :---------- | :-------- |
+| Users      | name        | string    |
+|            | email       | string    |
+|            | tel         | integer   |
+|            | password    | string    |
+| Tasks      | title       | string    |
+|            | description | text      |
+|            | priority    | integer   |
+|            | start_time  | datetime  |
+|            | end_time    | datetime  |
+|            | state       | integer   |
+|            | user_id     | bigint    |
+| Tags       | name        | string    |
+| Tags_Tasks | tag_id      | bigint    |
+|            | task_id     | bigint    |
