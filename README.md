@@ -1,24 +1,60 @@
-# README
+# It's About Time!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Life is short, we'd like to enjoy every moment of every day.
 
-Things you may want to cover:
+## Table of content
 
-* Ruby version
+[Requirements](#Requirements)  
+[Usage](#Usage)  
+  - [Install Dependency](#Install-Dependency)  
+  - [Prepare Database](#Prepare-Database)
+  - [Start server](#Start-server)
+  - [Check routes](#Check-routes)
 
-* System dependencies
+## Requirements
 
-* Configuration
+- Ruby version 2.6.0
+- Rails version 5.2.3
+- PostgreSQL 11.3
 
-* Database creation
+## Usage
 
-* Database initialization
+### Install Dependency
 
-* How to run the test suite
+```s
+$ bundle install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### Prepare Database
 
-* Deployment instructions
+If you didn't have database.
 
-* ...
+```s
+$ rails db:create
+```
+
+And run migration to create tables.
+
+```s
+$ rails db:migrate
+```
+
+### Start server
+
+Start Rails server.
+
+```s
+$ rails s
+```
+
+### Check routes:
+
+Check rails routes for more detail:
+
+```
+$ rails routes
+```
+
+## Models
+
+### Table schema
