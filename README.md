@@ -67,6 +67,8 @@ $ rails routes
 
 ### Entity-relationship model
 
+![Enitiy-relationship model in this project](https://github.com/stevencch99/About_Time/blob/develop/doc/Entity_relationship_model.jpg)
+
 ### Table schema
 
 | Table name | Column      | Data type |
