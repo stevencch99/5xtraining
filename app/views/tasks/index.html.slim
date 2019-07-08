@@ -1,6 +1,6 @@
-h1 任務列表
+h1 It's About Time!
 
-table
+table.table.talbe-striped
   thead
     tr
       th 任務名稱
@@ -8,5 +8,5 @@ table
   tbody
     - @tasks.each do |task|
       tr
-        td = task.title
+        td = link_to "#{task.title}", task_path(task)
         td = task.description

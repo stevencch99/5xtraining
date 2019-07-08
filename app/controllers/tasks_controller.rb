@@ -13,7 +13,12 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.create(task_params)
+    @task = Task.new(task_params)
+    if @task.save
+      redirect_to root, notice: '成功新增任務'
+    else
+      render :new
+    end
   end
 
   def edit
@@ -21,7 +26,11 @@ class TasksController < ApplicationController
   end
 
   def update
-    @task.update(task_params)
+    if @task.update(task_params)
+      redirect_to root, notice: '更新成功'
+    else
+      render :edit
+    end
   end
 
   def destroy

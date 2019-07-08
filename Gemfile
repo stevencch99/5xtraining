@@ -4,8 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.0'
 
 gem 'bootstrap', '~> 4.3.1' # bootstrap 4
-gem 'jquery-rails', '~> 4.3', '>= 4.3.1' # for bootstrap 4
-
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1' # jquery for bootstrap 4
 gem 'rails', '~> 5.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
@@ -38,7 +37,11 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem 'slim', '~> 3.0', '>= 3.0.6' # Using Slim
+# Use 'Slim' as template engine
+gem 'slim', '~> 3.0', '>= 3.0.6'
+
+# Use font-awesome for icons
+gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
