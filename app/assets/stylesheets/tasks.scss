@@ -1,3 +1,54 @@
-// Place all the styles related to the tasks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.tasks__list {
+  height: 70vh;
+  overflow: auto;
+
+  .task__card {
+    padding: 2px;
+    margin: 2px 0;
+    display: flex;
+    border: 2px solid #0cc;
+    border-radius: 4px;
+    justify-content: space-between;
+    transition: all 0.2s ease-in-out;
+
+    .task--color {
+      width: 6px;
+      background-color: #f0a;
+      border-radius: 4px;
+    }
+
+    .check-box {
+      height: 28px;
+      width: 28px;
+      align-self: center;
+      display: block;
+
+      .check-box-input {
+        display: none;
+
+        &:checked ~ label {
+          border: 0;
+          transition: all 0.25s ease-in-out;
+
+          &:before {
+            content: '\2714';
+            color: #fff;
+            transition: all 0.25s ease-in-out;
+          }
+        }
+      }
+
+      .check-box-label {
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+        border: 2px solid #f0a;
+      }
+    }
+
+    .btn--edit {
+      align-self: center;
+      height: 36px;
+    }
+  }
+}

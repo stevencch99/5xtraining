@@ -1,0 +1,11 @@
+.task--color
+.check-box
+  input type='checkbox' name='check-box' id="check-box-#{task.id}" class='check-box-input'
+  label class='check-box-label' for="check-box-#{task.id}"
+.task__info
+  p.task--title = link_to "#{task.title}", task_path(task)
+  p.task--desc = task.description
+.task__time
+  p.start-time
+  p.end-time
+= link_to "三", edit_task_path(task), remote: true, class: 'btn btn--edit btn-primary'
