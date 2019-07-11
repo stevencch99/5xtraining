@@ -38,7 +38,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # Use 'Slim' as template engine
-gem 'slim', '~> 3.0', '>= 3.0.6'
+# gem 'slim', '~> 3.0', '>= 3.0.6'
+gem 'slim-rails', '~> 3.1', '>= 3.1.1'
 
 # Use font-awesome for icons
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
@@ -46,9 +47,12 @@ gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails', '~> 5.0', '>= 5.0.2'
+  gem 'faker', '~> 1.9', '>= 1.9.3'
   gem 'pry-rails', '~> 0.3.9'             # debug
   gem 'rails_admin', '~> 1.4', '>= 1.4.2' # 後台管理工具
   gem 'rspec-rails', '~> 3.8', '>= 3.8.2' # rspec for rails
+  gem 'rubocop', '~> 0.71.0'
 end
 
 group :development do
