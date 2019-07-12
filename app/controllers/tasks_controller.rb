@@ -6,12 +6,10 @@ class TasksController < ApplicationController
   end
 
   def new
-    # byebug
     @task = Task.new
   end
 
   def show
-    byebug
   end
 
   def create

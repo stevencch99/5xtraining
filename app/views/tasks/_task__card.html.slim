@@ -1,0 +1,12 @@
+div id="task_#{task.id}" class='task__card'
+  div class="task--color-bar priority-#{task.priority}"
+  .check-box
+    input type='checkbox' name='check-box' id="check-box-#{task&.id}" class="check-box-input"
+    label class='check-box-label priority-border-#{task.priority}' for="check-box-#{task&.id}"
+  .task__info
+    p.task__info--title = link_to "#{task.title}", task_path(task)
+    p.task__info--desc = task.description
+  .task__time
+    p.start-time = task.start_time.strftime("%Y-%m-%d %H:%M")
+    p.end-time = task.end_time.strftime("%Y-%m-%d %H:%M")
+  = link_to "三", edit_task_path(task), remote: true, class: 'btn btn--edit btn-primary'
