@@ -1,0 +1,26 @@
+div id="task_" class='new-task__card task__card'
+  = simple_form_for task, html: { remote: true, class: 'edit-task-form form-inline' } do |f|
+    = f.input :priority, label: "優先度", collection: Task.priorities.keys
+    = f.input :state, label: "狀態", collection: Task.states.keys
+    = f.input :user_id, label: "user_id", collection: User.all.ids
+    div class="task--color-bar priority-#{task.priority}"
+    .check-box
+      input type='checkbox' name='check-box' id="check-box-#{task.id}" class='check-box-input'
+      label.check-box-label[for="check-box-#{task.id}"]
+    .task__info
+      p.task__info--title
+        = f.input :title, label: "標題"
+      p.task__info--desc
+        = f.input :description, label: "內容"
+      .task__time
+        p.start-time
+          = f.input :start_time, label: "開始時間"
+        p.end-time
+          = f.input :end_time, label: "結束時間"
+      = f.submit class: 'btn btn-outline-info task-submit-btn'
+      button id='cancel_edit_task' class='btn btn-outline-warning task-cancel-btn' 取消
+  script
+    |
+      $('#cancel_edit_task').on('click', function(e){
+        e.preventDefault();
+      })

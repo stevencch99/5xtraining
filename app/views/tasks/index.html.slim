@@ -1,0 +1,5 @@
+h1 It's About Time!
+
+section.tasks__list
+  = link_to "新增任務", new_task_path, remote: true, class: "add-new-task btn btn-outline-info"
+  = render partial: 'task__card', collection: @tasks, as: :task || "There are no tasks available."
