@@ -7,6 +7,6 @@ div class="task--color-bar priority-#{task.priority}"
   p.task--title = link_to "#{task.title}", task_path(task)
   p.task--desc = task.description
 .task__time
-  p.start-time
-  p.end-time
+  p.start-time = task.start_time.strftime("%Y-%m-%d %H:%M")
+  p.end-time = task.end_time.strftime("%Y-%m-%d %H:%M")
 = link_to "三", edit_task_path(task), remote: true, class: 'btn btn--edit btn-primary'

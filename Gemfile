@@ -39,10 +39,13 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # Use 'Slim' as template engine
 # gem 'slim', '~> 3.0', '>= 3.0.6'
-gem 'slim-rails', '~> 3.1', '>= 3.1.1'
+gem 'slim-rails', '~> 3.2'
 
 # Use font-awesome for icons
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
+
+# Use simple_form
+gem 'simple_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

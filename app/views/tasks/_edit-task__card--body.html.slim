@@ -5,19 +5,15 @@ p
   input type='checkbox' name='check-box' id="check-box-#{task.id}" class='check-box-input'
   label.check-box-label[for="check-box-#{task.id}"]
 .task__info
-  = form_for task, html: { remote: true, class: 'edit-task-form' } do |foo|
+  = simple_form_for task, html: { remote: true, class: 'edit-task-form form-inline' } do |f|
     p.task--title
-      = foo.label :title, '標題'
-      = foo.text_field :title
+      = f.input :title, label: "標題"
     p.task--desc
-      = foo.label :description, '內容'
-      = foo.text_area :description
+      = f.input :description, label: "內容"
     .task__time
       p.start-time
-        = foo.label :start_time, '開始時間'
-        = foo.datetime_field :start_time
+        = f.input :start_time, label: "開始時間"
       p.end-time
-        = foo.label :end_time, '結束時間'
-        = foo.datetime_field :end_time
-    = foo.submit class: 'btn btn-info'
+        = f.input :end_time, label: "結束時間"
+    = f.submit class: 'btn btn-info'
 = link_to "三", edit_task_path(task), remote: true, class: 'btn btn--edit btn-primary'
