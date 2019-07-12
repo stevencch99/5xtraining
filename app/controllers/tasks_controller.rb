@@ -6,16 +6,18 @@ class TasksController < ApplicationController
   end
 
   def new
+    # byebug
     @task = Task.new
   end
 
   def show
+    byebug
   end
 
   def create
     @task = Task.new(task_params)
     if @task.save
-      redirect_to root, notice: '成功新增任務'
+      redirect_to :root, notice: '成功新增任務'
     else
       render :new
     end
