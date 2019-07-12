@@ -11,6 +11,14 @@
     justify-content: space-between;
     transition: all 0.2s ease-in-out;
 
+    .task__info {
+      min-width: 200px;
+
+      .task__info--title {
+        font-size: 1.5em;
+        margin-bottom: 0;
+      }
+  }
     .task--color-bar {
       width: 6px;
       border-radius: 4px;
@@ -70,6 +78,15 @@
     .btn--edit {
       align-self: center;
       height: 36px;
+    }
+
+    .task-submit-btn,
+    .task-cancel-btn {
+      margin-right: 4px;
+    }
+    #cancel_edit_task {
+      // align-self: center;
+      height: 38px;
     }
   }
 }
