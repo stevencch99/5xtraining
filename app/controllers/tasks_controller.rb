@@ -28,7 +28,7 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      redirect_to root, notice: '更新成功'
+      redirect_to :root, notice: '更新成功'
     else
       render :edit
     end

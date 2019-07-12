@@ -1,25 +1,23 @@
-h2 編輯內容
-.task--color
+p
+  | 編輯內容
+.task--color-bar
 .check-box
   input type='checkbox' name='check-box' id="check-box-#{task.id}" class='check-box-input'
-  label class='check-box-label' for="check-box-#{task.id}"
+  label.check-box-label[for="check-box-#{task.id}"]
 .task__info
-  = form_for task, html: { remote: true, class: 'edit-task-form' } do |f|
-
-/! FIXME variable 'f' not define issue
-
-  p.task--title
-    = f.label :title, '標題'
-    = f.text_field :title
-  p.task--desc
-    = f.label :description, '內容'
-    = f.text_area :description
-.task__time
-  p.start-time
-    = f.label :start_time, '開始時間'
-    = f.datetime_field :start_time
-  p.end-time
-    = f.label :end_time, '結束時間'
-    = f.datetime_field :end_time
-  = f.submit class: 'btn btn-info'
+  = form_for task, html: { remote: true, class: 'edit-task-form' } do |foo|
+    p.task--title
+      = foo.label :title, '標題'
+      = foo.text_field :title
+    p.task--desc
+      = foo.label :description, '內容'
+      = foo.text_area :description
+    .task__time
+      p.start-time
+        = foo.label :start_time, '開始時間'
+        = foo.datetime_field :start_time
+      p.end-time
+        = foo.label :end_time, '結束時間'
+        = foo.datetime_field :end_time
+    = foo.submit class: 'btn btn-info'
 = link_to "三", edit_task_path(task), remote: true, class: 'btn btn--edit btn-primary'

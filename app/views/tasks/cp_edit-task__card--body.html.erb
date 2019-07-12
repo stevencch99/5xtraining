@@ -1,0 +1,29 @@
+<h2>編輯內容</h2>
+<div class="task--color"></div>
+<div class="check-box">
+  <input type='checkbox' name='check-box' id="check-box-#{task.id}" class='check-box-input'>
+  <label class='check-box-label' for="check-box-#{task.id}"></label>
+</div>
+<div class="task__info">
+  <%= form_for task, html: { remote: true, class: 'edit-task-form' } do |foo| %>
+    <p class="task--title">
+      <%= foo.label :title, '標題' %>
+      <%= foo.text_field :title %>
+    </p>
+    <p class="task--desc">
+      <%= foo.label :description, '內容' %>
+      <%= foo.text_area :description %>
+    </p>
+  <div class="task__time">
+    <p class="start-time">
+      <%= foo.label :start_time, '開始時間' %>
+      <%= foo.datetime_field :start_time %>
+    </p>
+    <p class="end-time">
+      <%= foo.label :end_time, '結束時間' %>
+      <%= foo.datetime_field :end_time %>
+    </p>
+  </div>
+  <%= foo.submit class: 'btn btn-info' %>
+  <% end %>
+</div>

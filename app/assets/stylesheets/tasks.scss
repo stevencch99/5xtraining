@@ -11,12 +11,34 @@
     justify-content: space-between;
     transition: all 0.2s ease-in-out;
 
-    .task--color {
+    .task--color-bar {
       width: 6px;
-      background-color: #f0a;
       border-radius: 4px;
     }
-
+    .priority- {
+      background-color: lightgrey;
+    }
+    .priority-high {
+      background-color: #f0a;
+    }
+    .priority-medium {
+      background-color: orange;
+    }
+    .priority-low {
+      background-color: mediumblue;
+    }
+    .priority-border- {
+      border: 2px solid lightgrey;
+    }
+    .priority-border-high {
+      border: 2px solid #f0a;
+    }
+    .priority-border-medium {
+      border: 2px solid orange;
+    }
+    .priority-border-low {
+      border: 2px solid mediumblue;
+    }
     .check-box {
       height: 28px;
       width: 28px;
@@ -42,7 +64,6 @@
         height: 100%;
         width: 100%;
         cursor: pointer;
-        border: 2px solid #f0a;
       }
     }
 

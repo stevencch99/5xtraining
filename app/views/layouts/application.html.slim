@@ -10,6 +10,6 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     .container
-      == flash_message(:notice) if flash[:notice]
-      == flash_message(:alert) if flash[:alert]
-      == yield
+      = flash_message(:notice) if flash[:notice]
+      = flash_message(:alert) if flash[:alert]
+      = yield
