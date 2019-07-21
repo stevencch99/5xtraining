@@ -2,6 +2,7 @@ class TasksController < ApplicationController
   before_action :find_task, only: %i[show edit update destroy]
 
   def index
+    # TODO change a better way to loading tasks from database
     @tasks = Task.all
   end
 
