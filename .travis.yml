@@ -1,11 +1,16 @@
 language: ruby
 rvm:
   - 2.6.0
+services:
+  - postgresql
 addons:
   postgresql: 11.3
 before_install:
   - gem update --system
   - gem install bundler:2.0.2
+before_script:
+  - psql -c 'create database tracis_ci_test;' -U postgres
+  - cp config/database.yml.travis config/database.yml
 script:
   - bundle exec rails db:create
   - bundle exec rails db:migrate RAILS_ENV=test
