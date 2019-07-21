@@ -8,6 +8,6 @@ describe '任務新增功能' do
     expect(Task.count).to eq 1
   end
   it '還要確認任務數量'
-  it '確認 任務的標題、內容、時間、優先度等等都要和建立的一樣'
+  it '確認 任務的標題、內容、時間、優先度等等都要和建立的一樣' 
 end
 end
