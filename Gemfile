@@ -56,6 +56,7 @@ group :development, :test do
   gem 'rails_admin', '~> 1.4', '>= 1.4.2' # 後台管理工具
   gem 'rspec-rails', '~> 3.8', '>= 3.8.2' # rspec for rails
   gem 'spring-commands-rspec', '~> 1.0', '>= 1.0.4' # speed up rspec test component
+  gem 'travis', '~> 1.8', '>= 1.8.8' # For Travis CI
   gem 'rubocop', '~> 0.71.0'
 end
 
