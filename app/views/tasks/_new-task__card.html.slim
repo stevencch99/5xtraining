@@ -18,9 +18,4 @@ div id="task_" class='new-task__card task__card'
         p.end-time
           = f.input :end_time, label: "結束時間"
       = f.submit class: 'btn btn-outline-info task-submit-btn'
-      button id='cancel_edit_task' class='btn btn-outline-warning task-cancel-btn' 取消
-  script
-    |
-      $('#cancel_edit_task').on('click', function(e){
-        e.preventDefault();
-      })
+      = link_to '取消', cancel_task_path, method: 'get', id: 'cancel_edit_task', class: 'btn btn-outline-warning task-cancel-btn'

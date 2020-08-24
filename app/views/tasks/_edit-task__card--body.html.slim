@@ -16,12 +16,7 @@
         p.end-time
           = f.input :end_time, label: "結束時間"
       = f.submit class: 'btn btn-outline-info task-submit-btn'
-      button id='cancel_edit_task' class='btn btn-outline-warning task-cancel-btn' 取消
+      / button id='cancel_edit_task' class='btn btn-outline-warning task-cancel-btn' 取消
+      = link_to '取消', cancel_task_path, method: 'get', id: 'cancel_edit_task', class: 'btn btn-outline-warning task-cancel-btn' 
       = link_to "刪除", task_path(task), method: 'delete', data: { confirm: "確認刪除任務：#{task.title}？" }, class: 'btn btn-outline-danger task-del-btn'
   = link_to "三", edit_task_path(task), remote: true, class: 'btn btn--edit btn-primary'
-
-  script
-    |
-      $('#cancel_edit_task').on('click', function(e){
-        e.preventDefault();
-      })
