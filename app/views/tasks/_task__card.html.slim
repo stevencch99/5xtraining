@@ -5,8 +5,8 @@ div id="task_#{task.id}" class='task__card'
     label class='check-box-label priority-border-#{task.priority}' for="check-box-#{task&.id}"
   .task__info
     p.task__info--title = link_to "#{task.title}", task_path(task)
-    p.task__info--desc = task.description
+    p.task__info--desc = truncate(task.description, length: 38)
   .task__time
-    p.start-time = task.start_time.strftime("%Y-%m-%d %H:%M")
-    p.end-time = task.end_time.strftime("%Y-%m-%d %H:%M")
+    p.start-time = task.start_time&.strftime("%Y-%m-%d %H:%M")
+    p.end-time = task.end_time&.strftime("%Y-%m-%d %H:%M")
   = link_to "三", edit_task_path(task), remote: true, class: 'btn btn--edit btn-primary'

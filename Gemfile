@@ -56,6 +56,8 @@ group :development, :test do
   gem 'faker', '~> 1.9', '>= 1.9.3'
   gem 'pry-rails', '~> 0.3.9'             # debug
   gem 'rspec-rails', '~> 3.8', '>= 3.8.2' # rspec for rails
+  gem 'spring-commands-rspec', '~> 1.0', '>= 1.0.4' # speed up rspec test component
+  gem 'travis', '~> 1.8', '>= 1.8.8' # For Travis CI
   gem 'rubocop', '~> 0.71.0'
 end
 
