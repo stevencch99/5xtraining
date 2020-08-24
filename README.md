@@ -21,7 +21,7 @@ Life is short, we'd like to enjoy every moment of every day.
 
 ## Requirements
 
-- Ruby version 2.6.0
+- Ruby version 2.6.5
 - Rails version 5.2.3
 - PostgreSQL 11.3
 
