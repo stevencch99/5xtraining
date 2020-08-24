@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.0'
+ruby '2.6.5'
 
 gem 'bootstrap', '~> 4.3.1' # bootstrap 4
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1' # jquery for bootstrap 4
@@ -15,7 +15,7 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'mini_racer', platforms: :ruby
+gem 'mini_racer', platforms: :ruby
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -47,13 +47,14 @@ gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 # Use simple_form
 gem 'simple_form'
 
-group :development, :test do
+gem 'rails_admin', '~> 1.4', '>= 1.4.2' # 後台管理工具
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+group :development, :test do
   gem 'factory_bot_rails', '~> 5.0', '>= 5.0.2'
   gem 'faker', '~> 1.9', '>= 1.9.3'
   gem 'pry-rails', '~> 0.3.9'             # debug
-  gem 'rails_admin', '~> 1.4', '>= 1.4.2' # 後台管理工具
   gem 'rspec-rails', '~> 3.8', '>= 3.8.2' # rspec for rails
   gem 'spring-commands-rspec', '~> 1.0', '>= 1.0.4' # speed up rspec test component
   gem 'travis', '~> 1.8', '>= 1.8.8' # For Travis CI
