@@ -8,6 +8,12 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
+    
+    # TODO fix format error when rendering AJAX page in production mode
+    # respond_to do |format|
+    #   format.js { render 'new', layout: false }
+    #   format.html { render 'new', layout: false }
+    # end
   end
 
   def show
@@ -38,6 +44,10 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy!
     redirect_to :root, notice: '任務已刪除'
+  end
+
+  def cancel
+    redirect_to :root, notice: 'Cancel editing'
   end
 
   private
