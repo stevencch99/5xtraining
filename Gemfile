@@ -49,8 +49,9 @@ gem 'simple_form'
 
 gem 'rails_admin', '~> 1.4', '>= 1.4.2' # 後台管理工具
 
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+# Call 'byebug' anywhere in the code to stop execution and get a debugger console
+gem 'byebug', platforms: %i[mri mingw x64_mingw]
+
 group :development, :test do
   gem 'factory_bot_rails', '~> 5.0', '>= 5.0.2'
   gem 'faker', '~> 1.9', '>= 1.9.3'
@@ -59,6 +60,7 @@ group :development, :test do
   gem 'spring-commands-rspec', '~> 1.0', '>= 1.0.4' # speed up rspec test component
   gem 'travis', '~> 1.8', '>= 1.8.8' # For Travis CI
   gem 'rubocop', '~> 0.71.0'
+  gem 'rails-controller-testing'
 end
 
 group :development do

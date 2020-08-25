@@ -1,23 +1,25 @@
+# frozen_string_literal: true
+
+# The main controller for the tasks
 class TasksController < ApplicationController
   before_action :find_task, only: %i[show edit update destroy]
 
   def index
-    # TODO change a better way to loading tasks from database
+    # TODO: change a better way to loading tasks from database
     @tasks = Task.all
   end
 
   def new
     @task = Task.new
-    
-    # TODO fix format error when rendering AJAX page in production mode
+
+    # TODO: fix format error when rendering AJAX page in production mode
     # respond_to do |format|
     #   format.js { render 'new', layout: false }
     #   format.html { render 'new', layout: false }
     # end
   end
 
-  def show
-  end
+  def show; end
 
   def create
     @task = Task.new(task_params)
