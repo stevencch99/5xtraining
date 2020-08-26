@@ -6,7 +6,8 @@ class TasksController < ApplicationController
 
   def index
     # TODO: change a better way to loading tasks from database
-    @tasks = Task.all
+    # @tasks = Task.all
+    @tasks = Task.find_in_batches.first
   end
 
   def new
